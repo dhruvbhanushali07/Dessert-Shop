@@ -3,7 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     colors: {
-      Red: "hsl(14, 86%, 42%)",
+      "Red-primary": "hsl(14, 86%, 42%)",
       Green: "hsl(159, 69%, 38%)",
       Rose: {
         50: "hsl(20, 50%, 98%)",
@@ -13,6 +13,9 @@ export default {
         500: "hsl(12, 20%, 44%)",
         900: " hsl(14, 65%, 9%)",
       },
+    },
+    fontFamily:{
+      "Red-Hat-Text": ['Red Hat Text']
     },
     extend: {},
   },
