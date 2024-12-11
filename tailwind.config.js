@@ -5,6 +5,16 @@ export default {
     fontFamily: {
       "Red-Hat-Text": ["Red Hat Text"],
     },
+    screens: {
+      'tablet': '600px',
+      // => @media (min-width: 640px) { ... }
+
+      'laptop': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'desktop': '1440px',
+      // => @media (min-width: 1280px) { ... }
+    },
     extend: {
       colors: {
         "Red-primary": "hsl(14, 86%, 42%)",
