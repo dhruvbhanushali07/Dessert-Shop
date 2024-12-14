@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <!-- Outer Circle (Ring) -->
+  <circle cx="10" cy="10" r="9" fill="none" stroke="#fff" stroke-width="2" />
+  
+  <!-- Minus Sign -->
+  <path fill="#fff" d="M5 9h10v2H5V9z"/>
+</svg>

@@ -20,7 +20,6 @@ export const DessertContext=React.createContext({
     removeFromCart:()=>{},
 
     // function to check whether the product is in cart or not to apply active/selected styles
-    isInCart:()=>{},
 })
 
 export const DessertContextProvider=DessertContext.Provider
