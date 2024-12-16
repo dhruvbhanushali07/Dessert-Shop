@@ -11,8 +11,7 @@ export default function Cart() {
     orderTotal += tot;
     return tot;
   }
-  console.log(cart);
-  
+
   function handleClick(id) {
     removeFromCart(id);
   }
@@ -31,7 +30,7 @@ export default function Cart() {
             </div>
           ) : (
             <div>
-              <div className="list max-h-[70vh] overflow-y-auto">
+              <div className="list scrollbar max-h-[70vh] overflow-y-auto">
                 {cart.map((item) => {
                   return (
                     <div
@@ -66,9 +65,15 @@ export default function Cart() {
                   );
                 })}
               </div>
-              <div className="flex justify-between w-full p-2 text-xl orderTotal">
-                <span>Order Total</span>
-                <span className="text-2xl font-bold">${orderTotal}</span>
+              <div>
+                <div className="flex justify-between w-full p-2 text-xl orderTotal">
+                  <span>Order Total</span>
+                  <span className="text-2xl font-bold">${orderTotal}</span>
+                </div>
+                <div className="flex ">
+                  <img className="h-full" src="src\assets\images\icon-carbon-neutral.svg" alt="carbon-neutral" />
+                  <span className="text-sm">This is <strong>carbon-neutral</strong> delivery</span>
+                </div>
               </div>
             </div>
           )}

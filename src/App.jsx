@@ -5,7 +5,6 @@ import { use } from "react";
 import Cart from "./components/Cart";
 
 function App() {
-  const [tempDatabase, setTempDatabase] = useState([]);
   const [allDesserts, setAllDesserts] = useState([]);
   const [cart, setCart] = useState([]);
   let allCartProductId= cart.map((product) => product.prodId || 0)
@@ -72,7 +71,7 @@ function App() {
       }}
     >
       <div className="w-full m-auto header laptop:w-4/5">
-        <h1 className="py-6 text-4xl font-bold header font-Red-Hat-Text">
+        <h1 className="px-4 py-6 text-4xl font-bold laptop:px-0 header font-Red-Hat-Text">
           Desserts
         </h1>
       </div>
@@ -82,7 +81,7 @@ function App() {
           <MenuDisplay />
         </div>
 
-        <div className="relative w-full laptop:w-1/5">
+        <div className="relative w-full laptop:w-[30%] desktop:w-1/5">
           <Cart />
         </div>
       </div>
