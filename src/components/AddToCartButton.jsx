@@ -17,9 +17,7 @@ export default function AddToCartButton({
   const btnRef = useRef();
   const incrementlogoRef = useRef();
   const decrementLogoRef = useRef();
-  
-  console.log("cart button render");
-  
+
   const handleClick = () => {
     addToCart(prodId, prodnm, prodpri, imgpath);
   };
@@ -28,7 +26,7 @@ export default function AddToCartButton({
     updateQuantity(itemPos, prodId, true);
   };
   const onDecrement = () => {
-    updateQuantity(itemPos,prodId, false);
+    updateQuantity(itemPos, prodId, false);
   };
 
   useGSAP(() => {

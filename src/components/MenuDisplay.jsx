@@ -3,25 +3,19 @@ import { DessertContext } from "../context/DessertContext";
 import AddToCartButton from "./AddToCartButton";
 
 export default function MenuDisplay() {
-  const {
-    allCartProductId,
-    allDesserts,
-  } = useContext(DessertContext);
+  const { allCartProductId, allDesserts } = useContext(DessertContext);
 
-  let itemPosition
-  console.log("menu render");
-  
+  let itemPosition;
   function isInCart(id) {
-    itemPosition=allCartProductId.indexOf(id)
-    return itemPosition ;
+    itemPosition = allCartProductId.indexOf(id);
+    return itemPosition;
   }
   return (
     <>
-      
       {/* Displaying all products by mappnig allDesserts list */}
       <div className="grid content-start w-full h-full grid-cols-1 gap-4 px-4 tablet:grid-cols-2 laptop:grid-cols-3 menu">
         {allDesserts.map((item) => {
-          const cartStatus = isInCart(item.id)>-1?true:false;
+          const cartStatus = isInCart(item.id) > -1 ? true : false;
           return (
             <div
               className="flex flex-col w-full h-auto gap-8 item"
