@@ -17,7 +17,7 @@ function App() {
 
   // Fetches data from data.json file
   useEffect(() => {
-    fetch("/data.json")
+    fetch("src/data.json")
       .then((response) => response.json())
       .then((data) =>
         // assigning unique id to each product
