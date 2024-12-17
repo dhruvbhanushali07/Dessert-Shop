@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { DessertContext } from "../context/DessertContext";
 
 export default function Cart() {
-  const { cart, removeFromCart } = useContext(DessertContext);
+  const { cart, removeFromCart, placeOrder } = useContext(DessertContext);
   //   const [totalItems, setTotalItems] = useState(0);
   let totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
   let orderTotal = 0;
@@ -18,13 +18,13 @@ export default function Cart() {
 
   return (
     <>
-      <div className="w-full top-4  rounded-md cart sticky bg-Rose-50 min-h-[300px] p-4">
+      <div className="w-full top-4 rounded-md cart sticky bg-Rose-50 min-h-[25rem] mb-4 p-4">
         <h1 className="text-2xl font-bold text-Red-primary">
           Your Cart ({totalItems})
         </h1>
-        <div className="cartList">
+        <div className="w-full h-full cartList">
           {totalItems == 0 ? (
-            <div className="flex flex-col flex-wrap content-center justify-center w-full gap-4 h-fulls emptyCart">
+            <div className="flex flex-col flex-wrap content-center justify-center w-full h-full gap-4 emptyCart">
               <img src="src\assets\images\illustration-empty-cart.svg" alt="" />
               <p>Your cart is empty</p>
             </div>
@@ -65,14 +65,27 @@ export default function Cart() {
                   );
                 })}
               </div>
-              <div>
-                <div className="flex justify-between w-full p-2 text-xl orderTotal">
-                  <span>Order Total</span>
+              <div className="">
+                <div className="flex justify-between w-full p-4 text-xl orderTotal">
+                  <span className="text-base">Order Total</span>
                   <span className="text-2xl font-bold">${orderTotal}</span>
                 </div>
-                <div className="flex ">
-                  <img className="h-full" src="src\assets\images\icon-carbon-neutral.svg" alt="carbon-neutral" />
-                  <span className="text-sm">This is <strong>carbon-neutral</strong> delivery</span>
+                <div className="flex flex-wrap content-center justify-center p-6 rounded-md bg-rose-100 ">
+                  <img
+                    className="h-full"
+                    src="src\assets\images\icon-carbon-neutral.svg"
+                    alt="carbon-neutral"
+                  />
+                  <span className="text-sm">
+                    This is a <strong>carbon-neutral</strong> delivery
+                  </span>
+                </div>
+                <div className="p-4 mt-4 mb-4 text-center text-white rounded-full confirmbtn bg-Red-primary">
+                  <button className="w-full"  onClick={()=>{
+                    console.log("clicked");
+                    
+                    placeOrder()
+                  }}>Confirm Order</button>
                 </div>
               </div>
             </div>

@@ -9,13 +9,15 @@ export default function MenuDisplay() {
   } = useContext(DessertContext);
 
   let itemPosition
-
+  console.log("menu render");
+  
   function isInCart(id) {
     itemPosition=allCartProductId.indexOf(id)
     return itemPosition ;
   }
   return (
     <>
+      
       {/* Displaying all products by mappnig allDesserts list */}
       <div className="grid content-start w-full h-full grid-cols-1 gap-4 px-4 tablet:grid-cols-2 laptop:grid-cols-3 menu">
         {allDesserts.map((item) => {
@@ -48,6 +50,7 @@ export default function MenuDisplay() {
                   prodId={item.id}
                   prodnm={item.name}
                   prodpri={item.price}
+                  imgpath={item.image.thumbnail}
                   cartStatus={cartStatus}
                   itemPos={itemPosition}
                 />

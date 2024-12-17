@@ -8,6 +8,7 @@ export default function AddToCartButton({
   prodId,
   prodnm,
   prodpri,
+  imgpath,
   cartStatus,
   itemPos,
 }) {
@@ -17,9 +18,10 @@ export default function AddToCartButton({
   const incrementlogoRef = useRef();
   const decrementLogoRef = useRef();
   
+  console.log("cart button render");
   
   const handleClick = () => {
-    addToCart(prodId, prodnm, prodpri);
+    addToCart(prodId, prodnm, prodpri, imgpath);
   };
 
   const onIncrement = () => {
@@ -60,7 +62,7 @@ export default function AddToCartButton({
     <div className="wrapper absolute bottom-[-1.1rem] left-[50%] translate-x-[-50%]">
       <div
         className={`relative overflow-hidden flex flex-wrap content-center justify-around  w-44 h-10 rounded-full ${
-          cartStatus ? "bg-Red-primary" : "bg-rose-50"
+          cartStatus ? "bg-Red-primary" : "bg-white"
         } transition-all duration-200 border border-Red-primary`}
       >
         <button

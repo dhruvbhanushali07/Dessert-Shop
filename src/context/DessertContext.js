@@ -19,7 +19,12 @@ export const DessertContext=React.createContext({
     // function to remove product from cart
     removeFromCart:()=>{},
 
-    // function to check whether the product is in cart or not to apply active/selected styles
+    // function to place order and render popup
+    placeOrder:()=>{},
+
+    // function to clear cart and start new order
+    startNewOrder:()=>{}
+
 })
 
 export const DessertContextProvider=DessertContext.Provider
