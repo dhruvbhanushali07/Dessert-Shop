@@ -68,7 +68,7 @@ export default function AddToCartButton({
           ref={decrementLogoRef}
           className="absolute top-[50%] left-[-100%] translate-y-[-50%]"
         >
-          <img src="src\assets\images\icon-decrement-quantity.svg" alt="" />
+          <img src=".\images\icon-decrement-quantity.svg" alt="" />
         </button>
 
         <div className="text-white qtyDisplay">{cart[itemPos]?.qty}</div>
@@ -78,7 +78,7 @@ export default function AddToCartButton({
           className="absolute flex flex-wrap content-center justify-center w-full h-full gap-2 "
           onClick={handleClick}
         >
-          <img src="src\assets\images\icon-add-to-cart.svg" alt="" />
+          <img src=".\images\icon-add-to-cart.svg" alt="" />
           <span>Add to Cart</span>
         </button>
 
@@ -87,7 +87,7 @@ export default function AddToCartButton({
           ref={incrementlogoRef}
           className="absolute top-[50%] right-[-100%] translate-y-[-50%]"
         >
-          <img src="src\assets\images\icon-increment-quantity.svg" alt="" />
+          <img src=".\images\icon-increment-quantity.svg" alt="" />
         </button>
       </div>
     </div>

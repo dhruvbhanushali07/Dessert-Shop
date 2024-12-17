@@ -25,7 +25,7 @@ export default function Cart() {
         <div className="w-full h-full cartList">
           {totalItems == 0 ? (
             <div className="flex flex-col flex-wrap content-center justify-center w-full h-full gap-4 emptyCart">
-              <img src="src\assets\images\illustration-empty-cart.svg" alt="" />
+              <img src=".\images\illustration-empty-cart.svg" alt="" />
               <p>Your cart is empty</p>
             </div>
           ) : (
@@ -56,7 +56,7 @@ export default function Cart() {
                           }}
                         >
                           <img
-                            src="src\assets\images\icon-remove-item.svg"
+                            src=".\images\icon-remove-item.svg"
                             alt="remove item"
                           />
                         </button>
@@ -73,7 +73,7 @@ export default function Cart() {
                 <div className="flex flex-wrap content-center justify-center p-6 rounded-md bg-rose-100 ">
                   <img
                     className="h-full"
-                    src="src\assets\images\icon-carbon-neutral.svg"
+                    src=".\images\icon-carbon-neutral.svg"
                     alt="carbon-neutral"
                   />
                   <span className="text-sm">

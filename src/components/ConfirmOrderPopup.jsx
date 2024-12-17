@@ -13,7 +13,7 @@ export default function ConfirmOrderPopup() {
     <div className="fixed top-0 left-0 z-10 w-full h-[100vh] bg-black/40 flex flex-wrap content-end tablet:justify-center tablet:content-center ">
       <div className="w-full tablet:w-3/5 tablet:h-4/5 laptop:h-[85%] justify-center p-4  flex flex-col gap-6 tablet:gap-4 laptop:w-[35%]  laptop:p-6 laptop:gap-4 h-[90%] rounded-xl popup bg-white">
         <div>
-          <img src="src\assets\images\icon-order-confirmed.svg" alt="" />
+          <img src=".\images\icon-order-confirmed.svg" alt="" />
         </div>
 
         <p className="text-5xl font-bold laptop:text-6xl text-rose-950">Order Confirmed</p>
