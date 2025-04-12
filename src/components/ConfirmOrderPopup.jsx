@@ -31,7 +31,7 @@ export default function ConfirmOrderPopup() {
                   </div>
                   <div className="w-4/5 item-details">
                     <p className="mb-2 text-base font-medium">{item.name}</p>
-                    <div className="flex flex-wrap content-center w-full gap-4 text-sm pricing">
+                    <div className="flex flex-wrap content-center w-full gap-4  pricing">
                       <span className="text-Red-primary">{item.qty}x</span>
                       <span className="text-rose-500">@ ${item.price}</span>
                     </div>

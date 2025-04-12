@@ -41,7 +41,7 @@ export default function Cart() {
                         <p className="mb-2 text-base font-medium">
                           {item.name}
                         </p>
-                        <div className="flex flex-wrap content-center justify-between w-2/5 text-sm pricing">
+                        <div className="flex flex-wrap content-center justify-between w-2/5 pricing">
                           <span className="text-Red-primary">{item.qty}x</span>
                           <span className="text-rose-500">@ ${item.price}</span>
                           <span className="text-rose-900">
@@ -76,7 +76,7 @@ export default function Cart() {
                     src=".\images\icon-carbon-neutral.svg"
                     alt="carbon-neutral"
                   />
-                  <span className="text-sm">
+                  <span >
                     This is a <strong>carbon-neutral</strong> delivery
                   </span>
                 </div>
