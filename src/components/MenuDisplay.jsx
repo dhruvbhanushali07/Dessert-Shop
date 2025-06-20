@@ -29,7 +29,7 @@ export default function MenuDisplay() {
   return (
     <>
       {/* Displaying all products by mappnig allDesserts list */}
-      <div className="grid content-start w-full h-full grid-cols-1 gap-4 px-4 tablet:grid-cols-2 laptop:grid-cols-3 menu">
+      <div className="grid content-start w-full h-full min-h-[80vh] grid-cols-1 gap-4 px-4 tablet:grid-cols-2 laptop:grid-cols-3 menu">
         {allDesserts.map((item,index) => {
           const cartStatus = isInCart(item.id) > -1 ? true : false;
           return (
