@@ -20,7 +20,7 @@ export default function MenuDisplay() {
       // Trigger GSAP animation after elements are rendered
       gsap.from(itemRef.current, {
           y: -10,
-          stagger: 0.1,
+          stagger: 0.2,
           opacity: 0,
       });
     }
