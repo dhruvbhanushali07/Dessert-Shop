@@ -9,7 +9,7 @@ A modern, responsive e-commerce product listing and shopping cart application bu
 
 *(Replace this with your actual deployment link once hosted)*
 
-[**View Live Demo**]([https://www.google.com/search?q=YOUR_LIVE_DEMO_LINK_HERE](https://dessert-shop-bay.vercel.app/))
+[**View Live Demo**]([https://dessert-shop-bay.vercel.app/])
 
 ## ✨ Key Features & Technical Highlights
 
