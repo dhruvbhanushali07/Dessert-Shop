@@ -10,44 +10,53 @@ export default function MenuDisplay() {
   const skeletonRef = useRef([]);
   const [loaded, setLoaded] = useState(false);
 
-  // Check if product is in cart
+  const SKELETON_COUNT = 6;
+
   function isInCart(id) {
-    return allCartProductId.indexOf(id) !== -1;
+    return allCartProductId.includes(id);
   }
 
+  /* ---------------------------------------------------------
+      FADE OUT SKELETON → THEN SET loaded=true
+  --------------------------------------------------------- */
   useLayoutEffect(() => {
     if (allDesserts.length > 0) {
-      // Hide skeleton
       gsap.to(skeletonRef.current, {
         opacity: 0,
         duration: 0.25,
         onComplete: () => setLoaded(true),
       });
-
-      // Animate items
-      gsap.from(itemsRef.current, {
-        opacity: 0,
-        y: 10,
-        stagger: 1,
-        duration: 0.45,
-        ease: "power2.out",
-      });
     }
   }, [allDesserts]);
 
-  const SKELETON_COUNT = 6;
+  /* ---------------------------------------------------------
+      STAGGER ANIMATE REAL ITEMS (AFTER THEY RENDER)
+  --------------------------------------------------------- */
+  useLayoutEffect(() => {
+    if (loaded && itemsRef.current.length > 0) {
+      gsap.from(itemsRef.current, {
+        opacity: 0,
+        y: 15,
+        stagger: 0.10,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    }
+  }, [loaded]);
 
   return (
     <div
-      className="grid content-start w-full min-h-[80vh] grid-cols-1 gap-6 px-4 
+      className="grid content-start w-full min-h-screen grid-cols-1 gap-6 px-4 
       tablet:grid-cols-2 laptop:grid-cols-3"
     >
-      {/* ---------------------- SKELETON GRID ---------------------- */}
+      {/* ---------------------- SKELETON LOADING UI ---------------------- */}
       {!loaded &&
         Array.from({ length: SKELETON_COUNT }).map((_, sIndex) => (
           <div
             key={sIndex}
-            ref={(el) => (skeletonRef.current[sIndex] = el)}
+            ref={(el) => {
+              if (el) skeletonRef.current[sIndex] = el;
+            }}
             className="flex flex-col w-full gap-4 animate-pulse"
           >
             {/* image skeleton */}
@@ -60,7 +69,6 @@ export default function MenuDisplay() {
               <div className="w-16 h-4 bg-neutral-700/30 rounded"></div>
             </div>
 
-            {/* Reserved space for AddToCartButton */}
             <div className="h-10 w-full"></div>
           </div>
         ))}
@@ -74,7 +82,9 @@ export default function MenuDisplay() {
           return (
             <div
               key={item.id}
-              ref={(el) => (itemsRef.current[index] = el)}
+              ref={(el) => {
+                if (el) itemsRef.current[index] = el;
+              }}
               className="flex flex-col w-full gap-4"
             >
               {/* IMAGE */}
@@ -97,7 +107,6 @@ export default function MenuDisplay() {
                   />
                 </picture>
 
-                {/* Add to Cart */}
                 <AddToCartButton
                   prodId={item.id}
                   prodnm={item.name}
