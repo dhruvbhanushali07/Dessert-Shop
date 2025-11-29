@@ -11,16 +11,16 @@ export default function ConfirmOrderPopup() {
   }
   return (
     <div className="fixed top-0 left-0 z-10 w-full h-[100vh] bg-black/40 flex flex-wrap content-end tablet:justify-center tablet:content-center ">
-      <div className="w-full tablet:w-3/5 tablet:h-4/5 laptop:h-[85%] justify-center p-4  flex flex-col gap-6 tablet:gap-4 laptop:w-[35%]  laptop:p-6 laptop:gap-4 h-[90%] rounded-xl popup bg-white">
+      <div className="w-full tablet:w-3/5  h-auto justify-center p-4  flex flex-col gap-6 tablet:gap-4 laptop:w-[35%]  laptop:p-6 laptop:gap-4  rounded-xl popup bg-white">
         <div>
           <img src=".\images\icon-order-confirmed.svg" alt="" />
         </div>
 
-        <p className="text-5xl font-bold laptop:text-6xl text-rose-950">Order Confirmed</p>
+        <p className="text-5xl font-bold laptop:text-4xl desktop:text-5xl text-rose-950">Order Confirmed</p>
         <p className="text-base text-Rose-900">We hope you enjoy your food!</p>
 
-        <div className="p-4 rounded-md bg-rose-50" >
-          <div className=" relative scrollbar max-h-[15rem] overflow-y-scroll laptop:max-h-[25rem] ">
+        <div className="p-4 rounded-md h-auto bg-rose-50" >
+          <div className=" relative scrollbar h-4/5 max-h-[15rem] overflow-y-scroll  ">
             {cart.map((item) => {
               return (
                 <div
